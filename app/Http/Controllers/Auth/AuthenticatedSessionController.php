@@ -12,12 +12,22 @@ use Illuminate\View\View;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Cookie;
+use App\Models\User;
 
 class AuthenticatedSessionController extends Controller
 {
-    public function create(): View
+	public function create(): View
+	{
+		//return view('auth.join');
+		return view('auth.signin.pass.auth');
+	}
+    public function mail(Request $request)
     {
-        return view('auth.join');
+        return view('auth.signin.mail');
+    }
+    public function pass(Request $request)
+    {
+        return view('auth.signin.pass.auth');
     }
     public function store(LoginRequest $request): RedirectResponse
     {
@@ -39,68 +49,61 @@ class AuthenticatedSessionController extends Controller
         return redirect('/');
     }
 
-    public function join(Request $request)
+	public function mailTransfer(Request $request)
     {
+		if (Auth::check()) {
+			return redirect('/signin/new');
+		}
         if ($request->has('mail')) {
-            $mail = $request->input('mail');
-            if (filter_var($cookie, FILTER_VALIDATE_EMAIL)) {}
-            else {
-                return redirect('/join/mail')->withErrors(['mail'])->withInput();
-            }
-            $cookie = $request->cookie('mail');
-            if ($cookie) {
-                if (filter_var($cookie, FILTER_VALIDATE_EMAIL)) {
-                    $session = session('mail');
-                    if($session) {
-                        if($session == $mail) {
-                            $cookie = Cookie::forever('mail', $mail);
-                            return redirect('/dashboard')->cookie($cookie);
-                        } else {
-                            session(['mail', $mail]);
-                            $cookie = Cookie::forever('mail', $mail);
-                            return redirect('/dashboard')->cookie($cookie);
-                        }
-                    } else {
-    
-                    }
-                    if($mail == $cookie) {
-                        return redirect('/join/pass')->cookie();
-                    }
-                } else {
-                    
-                }
-            } else {
-                $session = session('mail');
-                if($session) {
-                    if($session == $mail) {
-                        $cookie = Cookie::forever('mail', $mail);
-                        return redirect('/dashboard')->cookie($cookie);
-                    } else {
-                        session(['mail', $mail]);
-                        $cookie = Cookie::forever('mail', $mail);
-                        return redirect('/dashboard')->cookie($cookie);
-                    }
-                } else {
-
-                }
-                $cookie = Cookie::forever('mail', mail);
-                return redirect('/join/pass')->cookie($cookie);
-            }
-        }
-        $mail = $request->cookie('mail');
-        if ($mail) {
-            if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-          
-            } else {
-
-            }
-        } else {
-            return redirect('/join/mail');
-        }
-        dd($request);
+			if (filter_var($request->input('mail'), FILTER_VALIDATE_EMAIL)) {
+				$mail = $request->input('mail');
+				session(['mail' => $mail]);
+				$cookie = Cookie::forever('mail', $mail);
+			} else {
+				return redirect('/signin/mail')->with('message', __('Send One Mail'))->withErrors(['mail'])->withInput();
+			}
+		} else if (filter_var($request->cookie('mail'), FILTER_VALIDATE_EMAIL)) {
+			$mail = $request->cookie('mail');
+			session(['mail' => $mail]);
+		} else if (session('mail')) {
+			$mail = session('mail');
+			$cookie = Cookie::forever('mail', $mail);
+		} else {
+			return redirect('/signin/mail')->with('message', __('Send One Mail'))->withErrors(['mail'])->withInput();
+		}
+		$user = User::where('mail', $mail)->first();
+		if ($user) {
+			return redirect('/signin/pass/auth')->cookie($cookie);
+		}
+		else {
+			return redirect('/signin/pass/register')->cookie($cookie);
+		}
     }
-    public function mail(Request $request)
-    {
-        return view('auth.mail');
-    }
+	
+	public function passTransfer(Request $request)
+	{
+		if (Auth::check()) {
+			return redirect('/signin/new');
+		}
+        if ($request->has('pass')) {
+			$pass = $request->input('pass');
+		} else if ($request->cookie('pass')) {
+			$pass = $request->cookie('pass');
+		} else {
+			return redirect('/signin/pass/auth')->with('message', __('Send One Password'))->withErrors(['pass'])->withInput();
+		}
+		if ($request->has('remember')) {
+			$remember = $request->input('remember');
+		} else if ($request->cookie('remember')) {
+			$remember = $request->cookie('remember');
+		} else {
+			$remember = False;
+		}
+		$auth = new LoginRequest();
+		$auth->mail = session('mail');
+		$auth->pass = $pass;
+		$auth->remember = $remember;
+		$this->store($auth);
+		return redirect('/dashboard');
+	}
 }
