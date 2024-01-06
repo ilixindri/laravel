@@ -115,6 +115,7 @@ https://laravel.com/api/8.x/index.html
 `$user->touch();`
 # Codes
 ```
+composer install
 php artisan cache:clear && php artisan config:clear && php artisan view:clear && php artisan route:clear
 php artisan migrate:refresh --seed
 php artisan clear-compiled && composer dump-autoload && php artisan optimize
@@ -127,3 +128,17 @@ php artisan make:migration create_agreement_table
 ## Develop
  - Install Docker Engine to Qodana
  - Install Qodana (JetBrains)
+ 
+# outputs command line
+> @php artisan package:discover --ansi
+
+   INFO  Discovering packages.
+
+  laravel/breeze ................................................................................................ DONE
+  laravel/sail .................................................................................................. DONE
+  laravel/sanctum ............................................................................................... DONE
+  laravel/tinker ................................................................................................ DONE
+  nesbot/carbon ................................................................................................. DONE
+  nunomaduro/collision .......................................................................................... DONE
+  nunomaduro/termwind ........................................................................................... DONE
+  spatie/laravel-ignition ....................................................................................... DONE

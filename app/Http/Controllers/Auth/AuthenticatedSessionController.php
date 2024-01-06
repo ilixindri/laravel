@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Cookie;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -99,11 +100,9 @@ class AuthenticatedSessionController extends Controller
 		} else {
 			$remember = False;
 		}
-		$auth = new LoginRequest();
-		$auth->mail = session('mail');
-		$auth->pass = $pass;
-		$auth->remember = $remember;
-		$this->store($auth);
+		$user = User::where('mail', session('mail'))->where('pass', Hash::make($pass))->first();
+        Auth::login($user);
+        return redirect(RouteServiceProvider::HOME);
 		return redirect('/dashboard');
 	}
 }
