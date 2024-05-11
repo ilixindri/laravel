@@ -3,7 +3,6 @@ sudo apt-get install -y php-dom
 sudo apt-get install -y php-curl
 sudo apt-get install -y php-zip
 ./composer install
-sudo mv . /var/www/
 sudo apt install -y apache2
 sudo rm /etc/apache2/sites-enabled/000-default.conf
 current_folder=$(basename "$PWD")
@@ -39,3 +38,4 @@ conteudo="<VirtualHost *:80>
 echo "$conteudo" > "/etc/apache2/sites-enabled/000-$current_folder.conf"
 sudo /etc/init.d/apache2 restart
 sudo /etc/init.d/apache2 status
+# sudo mv . /var/www/ # não é possível mover se esse script estiver dentro da pasta a ser movida
