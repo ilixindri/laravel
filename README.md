@@ -113,7 +113,7 @@ protected static function booted()
 ```
 # link doc expanded
 https://laravel.com/api/8.x/index.html
-# update line without update any field
+# update line dates without update any field
 `$user->touch();`
 # Codes
 ```
