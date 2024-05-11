@@ -35,7 +35,14 @@ conteudo="<VirtualHost *:80>
         # after it has been globally disabled with "a2disconf".
         #Include conf-available/serve-cgi-bin.conf
 </VirtualHost>"
+<<<<<<< HEAD
 echo "$conteudo" > "/etc/apache2/sites-enabled/000-$current_folder.conf"
 sudo /etc/init.d/apache2 restart
 sudo /etc/init.d/apache2 status
 # sudo mv . /var/www/ # não é possível mover se esse script estiver dentro da pasta a ser movida
+=======
+current_folder=$(basename "$PWD")
+echo "$conteudo" > "/etc/apache2/sites-enabled/000-$current_folder.conf"
+sudo /etc/init.d/apache2 restart
+sudo /etc/init.d/apache2 status
+>>>>>>> 8657e97f487d3d9db604dab6b9ce5cc0781ea675
