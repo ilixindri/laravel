@@ -144,3 +144,7 @@ php artisan make:migration create_agreement_table
   nunomaduro/collision .......................................................................................... DONE
   nunomaduro/termwind ........................................................................................... DONE
   spatie/laravel-ignition ....................................................................................... DONE
+
+# Escolha do nome LogIn
+ - SignIn não foi aceito pois existe SignUp e ambos referem-se a acessar o sistema.
+ - To Enter não foi escolhido pois LogIn existe.
