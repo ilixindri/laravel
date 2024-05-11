@@ -65,7 +65,7 @@
 						<a href="{{ url('/dashboard') }}" class="text-decoration-none text-reset text-primary-emphasis hc">{{ __('Dashboard') }}</a>
 					@else
 						<!--<a href="/signin" class="text-decoration-none text-reset text-primary-emphasis hc">Sign In</a>-->
-						<button class="p-3 border-0 h" onclick="window.location.href = '{{ route('x4', ['NextRoute' => 'Mail']) }}'" type="button" aria-expanded="false">
+						<button id="enter" class="p-3 border-0 h" onclick="window.location.href = '{{ route('x4', ['NextRoute' => 'Mail']) }}'" type="button" aria-expanded="false">
 							{{ __('Enter') }}
 						</button>
 					@endauth
@@ -98,7 +98,7 @@
 				}
 			}
 			function performAction() {
-				window.location.href = '{{ route('x4', ['NextRoute' => 'Mail']) }}';
+				document.getElementById("enter").onclick()
 			}
 		</script>
     </body>
