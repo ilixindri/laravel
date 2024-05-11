@@ -1,3 +1,5 @@
+Sistema que cria sistemas de CRUD com add-ons.
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -142,3 +144,7 @@ php artisan make:migration create_agreement_table
   nunomaduro/collision .......................................................................................... DONE
   nunomaduro/termwind ........................................................................................... DONE
   spatie/laravel-ignition ....................................................................................... DONE
+
+# Escolha do nome LogIn
+ - SignIn não foi aceito pois existe SignUp e ambos referem-se a acessar o sistema.
+ - To Enter não foi escolhido pois LogIn existe.
