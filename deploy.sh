@@ -19,6 +19,12 @@ conteudo="<VirtualHost *:80>
         ServerAdmin webmaster@localhost
         DocumentRoot \"/var/www/$current_folder/public/\"
 
+        <Directory \"/var/www/$current_folder/public/\">
+                Options Indexes FollowSymLinks
+                Require all granted
+                AllowOverride all
+        </Directory>
+
         # Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
         # error, crit, alert, emerg.
         # It is also possible to configure the loglevel for particular
@@ -38,4 +44,8 @@ conteudo="<VirtualHost *:80>
 echo "$conteudo" > "/etc/apache2/sites-enabled/000-$current_folder.conf"
 sudo /etc/init.d/apache2 restart
 sudo /etc/init.d/apache2 status
+# cp .env.example > .env # fazer isso em production and delete by .gitignore
+php artisan key:generate
+echo "Edite .env"
+touch database/database.sqlite
 # sudo mv . /var/www/ # não é possível mover se esse script estiver dentro da pasta a ser movida
