@@ -4,6 +4,7 @@ sudo apt-get install -y php-curl
 sudo apt-get install -y php-zip
 ./composer install
 sudo apt-get install -y npm
+npm install
 sudo apt-get install -y apache2
 sudo rm /etc/apache2/sites-enabled/000-default.conf
 current_folder=$(basename "$PWD")
