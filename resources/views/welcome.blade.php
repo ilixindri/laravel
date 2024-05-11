@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 	@include('head')
-    <body class="antialiased">
+    <body class="antialiased" onkeydown="handlePressEnter()">
         <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
 		<style>
 			.test1 {
@@ -60,20 +60,13 @@
 		</style>
 			<div style="text-align: end;" class="m-2">
 			<div class="" style="display: inline-flex; background-color: #ecf0f1;">
-				<div id="custom-menu">
-					<ul>
-						<li>Opção 1</li>
-						<li>Opção 2</li>
-						<li>Opção 3</li>
-					</ul>
-				</div>
 				<div class="" id="auth" style="cursor: pointer">
 					@auth
 						<a href="{{ url('/dashboard') }}" class="text-decoration-none text-reset text-primary-emphasis hc">{{ __('Dashboard') }}</a>
 					@else
 						<!--<a href="/signin" class="text-decoration-none text-reset text-primary-emphasis hc">Sign In</a>-->
-						<button class="p-3 border-0 h" onclick="window.location.href = '/signin/mail';" type="button" aria-expanded="false">
-							{{ __('Sign In') }}
+						<button class="p-3 border-0 h" onclick="window.location.href = '{{ route('x4', ['NextRoute' => 'Mail']) }}'" type="button" aria-expanded="false">
+							{{ __('LogIn') }}
 						</button>
 					@endauth
 				</div>
@@ -98,5 +91,15 @@
             </div>
         </div>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+		<script>
+			function handlePressEnter() {
+				if (event.keyCode === 13) {
+					performAction();
+				}
+			}
+			function performAction() {
+				window.location.href = '{{ route('x4', ['NextRoute' => 'Mail']) }}';
+			}
+		</script>
     </body>
 </html>
