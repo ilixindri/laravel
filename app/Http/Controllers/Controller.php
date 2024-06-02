@@ -16,6 +16,7 @@ class Controller extends BaseController
         if ($NextRoute !== null) {
             return view('LoadING', ['NextRoute' => $NextRoute]);
         }
+        dd();
         return view('LoadING', ['NextRoute' => $NextRoute]);
     }
 }
