@@ -20,7 +20,7 @@ class Controller extends BaseController
         dd();
         return view('LoadING', ['NextRoute' => $NextRoute]);
     }
-	public function load(Request $request, $next = null)
+	public function load(Request $request, $next)
     {
         return '1';
     }
