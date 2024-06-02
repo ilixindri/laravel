@@ -69,9 +69,18 @@
 							{{ __('Enter') }}
 						</button>
 					@endauth
-						<button id="enter" class="p-3 border-0 h" onclick="window.location.href = '/load/1'" type="button" aria-expanded="false">
-							{{ __('Test') }}
-						</button>
+<button class="p-3 border-0 h" onclick="window.location.href = '/load0/1'" type="button">{{ __('Test') }}</button>
+<button class="p-3 border-0 h" onclick="window.location.href = '/load02/1'" type="button">{{ __('Test') }}</button>
+<button class="p-3 border-0 h" onclick="window.location.href = '/load1/1'" type="button">{{ __('Test') }}</button>
+<button class="p-3 border-0 h" onclick="window.location.href = '/load12/1'" type="button">{{ __('Test') }}</button>
+<button class="p-3 border-0 h" onclick="window.location.href = '/load2/1'" type="button">{{ __('Test') }}</button>
+<button class="p-3 border-0 h" onclick="window.location.href = '/load22/1'" type="button">{{ __('Test') }}</button>
+<button class="p-3 border-0 h" onclick="window.location.href = '/load3/1'" type="button">{{ __('Test') }}</button>
+<button class="p-3 border-0 h" onclick="window.location.href = '/load32/1'" type="button">{{ __('Test') }}</button>
+<button class="p-3 border-0 h" onclick="window.location.href = '/load4/1'" type="button">{{ __('Test') }}</button>
+<button class="p-3 border-0 h" onclick="window.location.href = '/load42/1'" type="button">{{ __('Test') }}</button>
+<button class="p-3 border-0 h" onclick="window.location.href = '/load5/1'" type="button">{{ __('Test') }}</button>
+<button class="p-3 border-0 h" onclick="window.location.href = '/load52/1'" type="button">{{ __('Test') }}</button>
 				</div>
 				<button class="dropdown-toggle p-3 border-0 h" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 					<i class="bi bi-gear"></i>
