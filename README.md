@@ -67,6 +67,9 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
+# erro 404
+`sudo a2enmod rewrite`
+
 # erro 1
 ```
 The "https://repo.packagist.org/p2/symfony/error-handler.json" file could not be downloaded: SSL: Handshake timed out
