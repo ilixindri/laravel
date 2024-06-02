@@ -69,18 +69,6 @@
 							{{ __('Enter') }}
 						</button>
 					@endauth
-<a class="p-3 border-0 h" href="load0/1" type="a">{{ __('Test') }}</a>
-<a class="p-3 border-0 h" href="/load02/1" type="a">{{ __('Test') }}</a>
-<a class="p-3 border-0 h" href="/load1/1" type="a">{{ __('Test') }}</a>
-<a class="p-3 border-0 h" href="/load12/1" type="a">{{ __('Test') }}</a>
-<a class="p-3 border-0 h" href="/load2/1" type="a">{{ __('Test') }}</a>
-<a class="p-3 border-0 h" href="/load22/1" type="a">{{ __('Test') }}</a>
-<a class="p-3 border-0 h" href="/load3/1" type="a">{{ __('Test') }}</a>
-<a class="p-3 border-0 h" href="/load32/1" type="a">{{ __('Test') }}</a>
-<a class="p-3 border-0 h" href="/load4/1" type="a">{{ __('Test') }}</a>
-<a class="p-3 border-0 h" href="/load42/1" type="a">{{ __('Test') }}</a>
-<a class="p-3 border-0 h" href="/load5/1" type="a">{{ __('Test') }}</a>
-<a class="p-3 border-0 h" href="/load52/1" type="a">{{ __('Test') }}</button>
 				</div>
 				<button class="dropdown-toggle p-3 border-0 h" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 					<i class="bi bi-gear"></i>
