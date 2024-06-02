@@ -29,5 +29,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/LoadING/{NextRoute}/', [Controller::class, 'LoadING'])->name('x4');
+Route::get('/load/{next}/', [Controller::class, 'load']);
 
 require __DIR__.'/auth.php';

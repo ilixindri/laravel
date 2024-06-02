@@ -69,6 +69,9 @@
 							{{ __('Enter') }}
 						</button>
 					@endauth
+						<button id="enter" class="p-3 border-0 h" onclick="window.location.href = '/load/1'" type="button" aria-expanded="false">
+							{{ __('Test') }}
+						</button>
 				</div>
 				<button class="dropdown-toggle p-3 border-0 h" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 					<i class="bi bi-gear"></i>
