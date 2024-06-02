@@ -14,6 +14,7 @@ class Controller extends BaseController
 	public function LoadING(Request $request, $NextRoute = null): View
     {
         if ($NextRoute !== null) {
+            dd();
             return view('LoadING', ['NextRoute' => $NextRoute]);
         }
         dd();
