@@ -1,5 +1,3 @@
-Sistema que cria sistemas de CRUD com add-ons.
-
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -67,8 +65,55 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
+# Laravel System
+Sistema que cria sistemas de CRUD com add-ons.
+
+# My License
+Royal. Verifique no meu GitHub.
+
+# Regras de negócio
+
+ - Na tela inicial enter vai direto para o dashboard.
+
+# Start
+
+```
+php artisan serve
+# AND
+npm run build
+npm run dev
+```
+
+# Componentes
+
+Atributos passados por :attr e não recuperados pelo @props são inseridos automaticamente.
+Os recuperados pelo @props não e hoje (08/07/2024) não é necessário recuperar pelo props para usar.
+
+```html
+<x-responsive-nav-link :href="route('DashBoard')" :active="request()->routeIs('DashBoard')">
+    {{ __('DashBoard') }}
+</x-responsive-nav-link>
+```
+
+```php
+@props(['active'])
+
+@php
+$classes = ($active ?? false)
+            ? 'block w-full ps-3 pe-4 py-2 border-l-4 border-indigo-400 dark:border-indigo-600 text-start text-base font-medium text-indigo-700 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-900/50 focus:outline-none focus:text-indigo-800 dark:focus:text-indigo-200 focus:bg-indigo-100 dark:focus:bg-indigo-900 focus:border-indigo-700 dark:focus:border-indigo-300 transition duration-150 ease-in-out'
+            : 'block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out';
+@endphp
+
+<a {{ $attributes }}>
+    {{ $slot }}
+</a>
+```
+
 # erro 404
 `sudo a2enmod rewrite`
+
+# ERRO de css
+abrir network no dev tools do browser
 
 # erro 1
 ```
@@ -119,7 +164,7 @@ https://laravel.com/api/8.x/index.html
 # update line dates without update any field
 `$user->touch();`
 # Codes
-```
+```bash
 composer install
 php artisan cache:clear && php artisan config:clear && php artisan view:clear && php artisan route:clear
 php artisan migrate:refresh --seed
@@ -129,6 +174,55 @@ npm install && npm run dev
 qodana scan -l jetbrains/qodana-php:2022.2-eap --show-report
 php artisan make:model Agreement
 php artisan make:migration create_agreement_table
+php artisan make:controller UserController
+php artisan make:controller ProvisionServer --invokable # ações complexas
+php artisan make:controller PhotoController --api
+php artisan make:controller PhotoController --model=Photo --resource --requests
+php artisan make:controller SystemController --resource --requests
+php artisan make:model System -m # criar migração too
+php artisan make:factory LineFactory --model=Line
+```
+
+```php
+Route::resource('photos', PhotoController::class);
+Route::resources([
+    'photos' => PhotoController::class,
+    'posts' => PostController::class,
+]);
+Route::resource('photos', PhotoController::class)
+        ->missing(function (Request $request) {
+            return Redirect::route('photos.index');
+        }); # Personalizando o comportamento do modelo ausente
+# Soft Deleted Models # Exibir soft delets
+Route::resource('photos', PhotoController::class)->withTrashed(['show']);
+Route::resource('photos', PhotoController::class)->only([
+    'index', 'show'
+]);
+Route::apiResource('photos', PhotoController::class); # sem create e edit
+# /photos/{photo}/comments/{comment}
+Route::resource('photos.comments', PhotoCommentController::class);
+# usar field slug ao invés de id para recuperar o model
+Route::resource('photos.comments', PhotoCommentController::class)->scoped([
+    'comment' => 'slug',
+]);
+# só precisa da Photo para index, create, store
+# Para show, edit, update e destroy apenas precisa de Comment
+Route::resource('photos.comments', CommentController::class)->shallow();
+Route::resource('photos', PhotoController::class)->names([
+    'create' => 'photos.build'
+])
+# rename model with name diff caso queira
+# /users/{admin_user}
+Route::resource('users', AdminUserController::class)->parameters([
+    'users' => 'admin_user'
+]);
+# cada user ter um único perfil
+# tera profile.show, profile.edit e profile.update
+Route::singleton('profile', ProfileController::class);
+# tera photos.thumbnail.show, photos.thumbnail.edit e photos.thumbnail.update
+Route::singleton('photos.thumbnail', ThumbnailController::class);
+# tera todos
+Route::singleton('photos.thumbnail', ThumbnailController::class)->creatable();
 ```
 ## Develop
  - Install Docker Engine to Qodana

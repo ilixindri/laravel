@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () { return view('welcome'); });
 Route::get('/tests', function () { return view('tests'); });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/DashBoard', function () {
+    $user = User::find('1');
+    Auth::login($user);
+    return view('DashBoard');
+})->name('DashBoard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -28,6 +31,21 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/LoadING/{NextRoute}/', [Controller::class, 'LoadING'])->name('x4');
+Route::get('/LoadING/{Route}/', [Controller::class, 'LoadING'])->name('LoadING');
+
+Route::resources([
+    'SystemS' => SystemController::class,
+    'TableS' => TableController::class,
+    'Fields' => FieldController::class,
+    'LineS' => LineController::class,
+]);
+Route::post('SystemS/{System}/ReStore', [SystemController::class, 'ReStore'])->name('SystemS.ReStore');
+Route::delete('Systems/{System}/Force-Delete', [SystemController::class, 'ForceDelete'])->name('SystemS.ForceDelete');
+Route::post('Tables/{Table}/ReStore', [TableController::class, 'ReStore'])->name('Tables.ReStore');
+Route::delete('TableS/{Table}/Force-Delete', [TableController::class, 'ForceDelete'])->name('Tables.ForceDelete');
+Route::post('Fields/{Field}/ReStore', [FieldController::class, 'ReStore'])->name('Fields.ReStore');
+Route::delete('Fields/{Field}/Force-Delete', [FieldController::class, 'ForceDelete'])->name('Fields.ForceDelete');
+Route::post('Lines/{Line}/ReStore', [LineController::class, 'ReStore'])->name('Lines.ReStore');
+Route::delete('Lines/{Line}/Force-Delete', [LineController::class, 'ForceDelete'])->name('Lines.ForceDelete');
 
 require __DIR__.'/auth.php';

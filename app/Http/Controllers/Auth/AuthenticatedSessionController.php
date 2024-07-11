@@ -14,23 +14,16 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Cookie;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 
 class AuthenticatedSessionController extends Controller
 {
 	public function create(): View
 	{
 		//return view('auth.join');
-		return view('auth.signin.pass.auth');
+		return view('auth.toenter');
 	}
-    public function mail(Request $request)
-    {
-        return view('auth.signin.mail');
-    }
-    public function pass(Request $request)
-    {
-        return view('auth.signin.pass.auth');
-    }
-    public function store(LoginRequest $request): RedirectResponse
+	public function store(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
         
@@ -39,7 +32,7 @@ class AuthenticatedSessionController extends Controller
 
         return redirect()->intended(RouteServiceProvider::HOME);
     }
-    public function destroy(Request $request): RedirectResponse
+	public function destroy(Request $request): RedirectResponse
     {
         Auth::guard('web')->logout();
 
@@ -49,7 +42,18 @@ class AuthenticatedSessionController extends Controller
 
         return redirect('/');
     }
-
+	public function login(Request $request)
+	{
+		return view('auth.login');
+	}
+	public function mail(Request $request)
+    {
+        return view('auth.login');
+    }
+    public function pass(Request $request)
+    {
+        return view('auth.signin.pass.auth');
+    }
 	public function mailTransfer(Request $request)
     {
 		if (Auth::check()) {
@@ -64,13 +68,17 @@ class AuthenticatedSessionController extends Controller
 				return redirect('/signin/mail')->with('message', __('Send One Mail'))->withErrors(['mail'])->withInput();
 			}
 		} else if (filter_var($request->cookie('mail'), FILTER_VALIDATE_EMAIL)) {
+			Log::debug('Tem cookie mail.');
 			$mail = $request->cookie('mail');
-			session(['mail' => $mail]);
-		} else if (session('mail')) {
+			if (!filter_var(session('mail'), FILTER_VALIDATE_EMAIL)) {
+				session(['mail' => $mail]);
+			}
+		} else if (filter_var(session('mail'), FILTER_VALIDATE_EMAIL)) {
 			$mail = session('mail');
 			$cookie = Cookie::forever('mail', $mail);
 		} else {
-			return redirect('/signin/mail')->with('message', __('Send One Mail'))->withErrors(['mail'])->withInput();
+			return view('Auth.Mail');
+			return redirect('/Enter/Mail')->with('message', __('Send One Mail'))->withErrors(['mail'])->withInput();
 		}
 		$user = User::where('mail', $mail)->first();
 		if ($user) {
