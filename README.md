@@ -73,17 +73,17 @@ The "https://repo.packagist.org/p2/symfony/error-handler.json" file could not be
   Failed to enable crypto
   failed to open stream: operation failed
 ```
-```
+```bash
 composer config --global disable-tls true
 composer config --global secure-http false
 ```
 Adicionar "secure-http": falso no arquivo composer.json
-```
+```json
 "config": {
     "secure-http": false
 },
 ```
-```
+```bash
 composer clear-cache
 composer diagnose
 ```
@@ -116,14 +116,19 @@ https://laravel.com/api/8.x/index.html
 # update line without update any field
 `$user->touch();`
 # Codes
-```
-composer install
+```bash
+# Use o Prompt De Comando OR Terminal
+# php composer update
+php composer install
+php artisan vendor:publish --tag=sanctum-migrations
 php artisan cache:clear && php artisan config:clear && php artisan view:clear && php artisan route:clear
+# touch database/database.sqlite # Terminal
+# OR
+# type nul > database/database.sqlite # Prompt De Comando
 php artisan migrate:refresh --seed
 php artisan clear-compiled && composer dump-autoload && php artisan optimize
 npm run watch
 npm install && npm run dev
-qodana scan -l jetbrains/qodana-php:2022.2-eap --show-report
 php artisan make:model Agreement
 php artisan make:migration create_agreement_table
 ```
