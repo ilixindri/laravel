@@ -131,6 +131,7 @@ php artisan key:generate
 npm run watch
 # EM OUTRA TAB
 php compose serve --port=80
+# Ctrl+K Ctrl+D to DevDb Open/Close
 ```
 
 # Codes
@@ -171,3 +172,51 @@ npm install && npm run dev
 eu ia usar o loading em todas as paginas enquanto eu fazia a requisição com js para pegar a pagina e substituir o body.
 
 mas agora vou usar a lib Pace.js e se der problema vou criar minha propria implementação com event load para ser a primeira coisa que carrega no load. lembrando que a velocidade no estilo Page.js de minha propria implementação é mais rápida que a primeira ideia de loading descrita nessa seção.
+
+# storage definition
+```bash
+nome-do-projeto/
+├── css/
+│   ├── style.css        (Estilos principais)
+│   ├── components/      (Estilos de componentes específicos)
+│   │   ├── button.css
+│   │   ├── form.css
+│   │   └── ...
+│   ├── vendors/         (Bibliotecas CSS externas, ex: Bootstrap, Normalize)
+│   │   ├── bootstrap.min.css
+│   │   └── ...
+│   └── utils/           (Estilos utilitários, ex: resets, helpers)
+│       ├── reset.css
+│       └── helpers.css
+├── js/
+│   ├── script.js       (JavaScript principal)
+│   ├── modules/        (Módulos JavaScript)
+│   │   ├── carousel.js
+│   │   ├── validation.js
+│   │   └── ...
+│   ├── vendors/        (Bibliotecas JS externas, ex: jQuery, React)
+│   │   ├── jquery.min.js
+│   │   └── ...
+│   └── utils/          (Funções utilitárias)
+│       ├── api.js
+│       └── functions.js
+├── media/
+│   ├── images/
+│   │   ├── logos/
+│   │   │   ├── logo.png
+│   │   │   └── ...
+│   │   ├── icons/
+│   │   │   ├── search.svg
+│   │   │   └── ...
+│   │   ├── backgrounds/
+│   │   │   └── ...
+│   │   └── outros/
+│   ├── videos/
+│   │   └── ...
+│   ├── audios/
+│   │   └── ...
+│   └── fonts/
+│       └── ...
+├── index.html          (Página HTML principal)
+└── outros-arquivos.html (Outras páginas HTML, se houver)
+```

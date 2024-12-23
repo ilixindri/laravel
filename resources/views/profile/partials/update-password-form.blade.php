@@ -9,9 +9,9 @@
         </p>
     </header>
 
-    <form method="post" action="{{ route('password.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('password.patch') }}" class="mt-6 space-y-6" autocomplete="off">
         @csrf
-        @method('put')
+        @method('patch')
 
         <div>
             <x-input-label for="current_password" :value="__('Current Password')" />
@@ -21,7 +21,7 @@
 
         <div>
             <x-input-label for="password" :value="__('New Password')" />
-            <x-text-input id="password" name="password" type="password" class="mt-1 block w-full" autocomplete="new-password" />
+            <x-text-input id="pass" name="pass" type="password" class="mt-1 block w-full" autocomplete="new-password" />
             <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />
         </div>
 

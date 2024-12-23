@@ -8,23 +8,40 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
+    /**
+     * Create the user's profile form.
+     */
+    public function create()
+    {
+        $user = new User();
+        $user->name = 'Convidado';
+        $user->save();
+        return response()->json($user);
+    }
+
     /**
      * Display the user's profile form.
      */
     public function edit(Request $request): View
     {
+        $user = $request->user();
+        if (!isset($user)) {
+            $user = new User();
+            $user->name = '';
+        }
         return view('profile.edit', [
-            'user' => $request->user(),
+            'user' => $user,
         ]);
     }
 
     /**
      * Update the user's profile information.
      */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    public function patch(ProfileUpdateRequest $request): RedirectResponse
     {
         $request->user()->fill($request->validated());
 

@@ -11,11 +11,13 @@ use Illuminate\Http\Request;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
-	public function LoadING(Request $request, $NextRoute = null): View
+	public function dashboard(Request $request): View
     {
-        if ($NextRoute !== null) {
-            return view('LoadING', ['NextRoute' => $NextRoute]);
-        }
-        return view('LoadING', ['NextRoute' => $NextRoute]);
+        return view('dashboard', );
+    }
+
+	public function welcome(Request $request): View
+    {
+        return view('welcome', ['modules' => ['welcome']]);
     }
 }
