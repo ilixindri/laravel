@@ -115,7 +115,7 @@ protected static function booted()
 https://laravel.com/api/8.x/index.html
 # update line without update any field
 `$user->touch();`
-# Codes
+# Start
 ```bash
 # Use o Prompt De Comando OR Terminal
 # php composer update
@@ -126,13 +126,26 @@ php artisan cache:clear && php artisan config:clear && php artisan view:clear &&
 # OR
 # type nul > database/database.sqlite # Prompt De Comando
 php artisan migrate:refresh --seed
-php artisan clear-compiled && composer dump-autoload && php artisan optimize
+npm install
+php artisan key:generate
 npm run watch
-npm install && npm run dev
+# EM OUTRA TAB
+php compose serve --port=80
+```
+
+# Codes
+```bash
 php artisan make:model Agreement
 php artisan make:migration create_agreement_table
 ```
-## Develop
+
+# Deploy
+```bash
+php artisan clear-compiled && composer dump-autoload && php artisan optimize
+npm install && npm run dev
+```
+
+# Develop
  - Install Docker Engine to Qodana
  - Install Qodana (JetBrains)
  
@@ -153,3 +166,8 @@ php artisan make:migration create_agreement_table
 # Escolha do nome Enter
  - SignIn não foi aceito pois existe SignUp e ambos referem-se a acessar o sistema.
  - Login não foi aceito pois existe Logon e ambos referem-se a acessar o sistema. 
+
+# idea history
+eu ia usar o loading em todas as paginas enquanto eu fazia a requisição com js para pegar a pagina e substituir o body.
+
+mas agora vou usar a lib Pace.js e se der problema vou criar minha propria implementação com event load para ser a primeira coisa que carrega no load. lembrando que a velocidade no estilo Page.js de minha propria implementação é mais rápida que a primeira ideia de loading descrita nessa seção.
