@@ -28,13 +28,9 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
-        $user = $request->user();
-        if (!isset($user)) {
-            $user = new User();
-            $user->name = '';
-        }
+        $user = User::find($request->_id);
         return view('profile.edit', [
-            'user' => $user,
+            'user' => $user
         ]);
     }
 

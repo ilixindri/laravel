@@ -10,11 +10,7 @@
         <link rel="stylesheet" href="/css/style.css">
 		<script src="/js/script.js" defer></script>
 
-        @if (isset($modules))
-            @foreach ($modules as $module)
-                <script src="/js/modules/{{ $module }}.js" defer></script>
-            @endforeach
-        @endif
+        <script src="/js/modules{{ str_replace(url('/'), '', url()->current()) }}.js" defer></script>
 
         @if (isset($components))
             @foreach ($components as $component)

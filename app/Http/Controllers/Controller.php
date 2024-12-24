@@ -13,11 +13,11 @@ class Controller extends BaseController
     use AuthorizesRequests, ValidatesRequests;
 	public function dashboard(Request $request): View
     {
-        return view('dashboard', );
+        return view('dashboard', ['modules' => ['dashboard'], 'components' => ['dashboard']]);
     }
 
 	public function welcome(Request $request): View
     {
-        return view('welcome', ['modules' => ['welcome']]);
+        return view('welcome', ['title' => 'QWE', 'modules' => ['welcome'], 'components' => ['welcome']]);
     }
 }

@@ -1,0 +1,35 @@
+.header {
+	display: flex; /* Habilita o flexbox */
+	justify-content: space-between; /* Espaço entre o menu e a imagem */
+	align-items: center; /* Alinha verticalmente ao centro */
+	padding: 20px; /* Espaçamento interno */
+	width: 100%; /* Largura total */
+	box-sizing: border-box; /* Inclui o padding na largura */
+  }
+  
+  .menu {
+	display: flex; /* Para alinhar os itens do menu horizontalmente */
+	gap: 20px; /* Espaçamento entre os links do menu */
+  }
+  
+  .menu a {
+	text-decoration: none; /* Remove sublinhado dos links */
+	color: #333; /* Cor dos links */
+	/* Outros estilos para os links */
+  }
+  
+  .image {
+	  max-width: 200px; /* Largura máxima da imagem para evitar que ela fique muito grande */
+  }
+  
+  .image img {
+	max-width: 100%; /* A imagem se ajusta ao tamanho do container */
+	height: auto; /* Mantém a proporção da imagem */
+	display: block; /* Evita espaços extras abaixo da imagem */
+  }
+  
+  .content {
+	  max-width: 960px; /* Largura máxima para o conteúdo principal */
+	  margin: 20px auto; /* Centraliza o conteúdo na página */
+	  padding: 20px;
+  }
