@@ -121,17 +121,17 @@ The "https://repo.packagist.org/p2/symfony/error-handler.json" file could not be
   Failed to enable crypto
   failed to open stream: operation failed
 ```
-```
+```bash
 composer config --global disable-tls true
 composer config --global secure-http false
 ```
 Adicionar "secure-http": falso no arquivo composer.json
-```
+```json
 "config": {
     "secure-http": false
 },
 ```
-```
+```bash
 composer clear-cache
 composer diagnose
 ```
@@ -163,25 +163,47 @@ protected static function booted()
 https://laravel.com/api/8.x/index.html
 # update line dates without update any field
 `$user->touch();`
+# Start
+```bash
+# Use o Prompt De Comando OR Terminal
+# php composer update
+php composer install
+# php artisan vendor:publish --tag=sanctum-migrations # precisou na migração de laravel 10 para 11.
+# touch database/database.sqlite # Terminal
+# OR
+# type nul > database/database.sqlite # Prompt De Comando
+php artisan migrate:refresh --seed
+npm install
+php artisan key:generate
+npm run watch
+# EM OUTRA TAB
+php compose serve --port=80
+# Ctrl+K Ctrl+D to DevDb Open/Close
+```
+
 # Codes
 ```bash
-composer install
 php artisan cache:clear && php artisan config:clear && php artisan view:clear && php artisan route:clear
-php artisan migrate:refresh --seed
-php artisan clear-compiled && composer dump-autoload && php artisan optimize
-npm run watch
-npm install && npm run dev
-qodana scan -l jetbrains/qodana-php:2022.2-eap --show-report
-php artisan make:model Agreement
-php artisan make:migration create_agreement_table
-php artisan make:controller UserController
+php artisan make:model Sistema -a
 php artisan make:controller ProvisionServer --invokable # ações complexas
-php artisan make:controller PhotoController --api
-php artisan make:controller PhotoController --model=Photo --resource --requests
-php artisan make:controller SystemController --resource --requests
-php artisan make:model System -m # criar migração too
-php artisan make:factory LineFactory --model=Line
 ```
+
+# Deploy
+```bash
+composer install --no-dev --optimize-autoloader
+php artisan migrate:refresh --seed
+npm install
+php artisan key:generate
+php artisan clear-compiled && composer dump-autoload && php artisan optimize
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+npm run build
+```
+
+# Develop
+ - Install Docker Engine to Qodana
+ - Install Qodana (JetBrains)
 
 ```php
 Route::resource('photos', PhotoController::class);
@@ -224,10 +246,7 @@ Route::singleton('photos.thumbnail', ThumbnailController::class);
 # tera todos
 Route::singleton('photos.thumbnail', ThumbnailController::class)->creatable();
 ```
-## Develop
- - Install Docker Engine to Qodana
- - Install Qodana (JetBrains)
- 
+
 # outputs command line
 > @php artisan package:discover --ansi
 
@@ -245,3 +264,56 @@ Route::singleton('photos.thumbnail', ThumbnailController::class)->creatable();
 # Escolha do nome Enter
  - SignIn não foi aceito pois existe SignUp e ambos referem-se a acessar o sistema.
  - Login não foi aceito pois existe Logon e ambos referem-se a acessar o sistema. 
+
+# idea history
+eu ia usar o loading em todas as paginas enquanto eu fazia a requisição com js para pegar a pagina e substituir o body.
+
+mas agora vou usar a lib Pace.js e se der problema vou criar minha propria implementação com event load para ser a primeira coisa que carrega no load. lembrando que a velocidade no estilo Page.js de minha propria implementação é mais rápida que a primeira ideia de loading descrita nessa seção.
+
+# storage definition
+```bash
+nome-do-projeto/
+├── css/
+│   ├── style.css        (Estilos principais)
+│   ├── components/      (Estilos de componentes específicos)
+│   │   ├── button.css
+│   │   ├── form.css
+│   │   └── ...
+│   ├── vendors/         (Bibliotecas CSS externas, ex: Bootstrap, Normalize)
+│   │   ├── bootstrap.min.css
+│   │   └── ...
+│   └── utils/           (Estilos utilitários, ex: resets, helpers)
+│       ├── reset.css
+│       └── helpers.css
+├── js/
+│   ├── script.js       (JavaScript principal)
+│   ├── modules/        (Módulos JavaScript)
+│   │   ├── carousel.js
+│   │   ├── validation.js
+│   │   └── ...
+│   ├── vendors/        (Bibliotecas JS externas, ex: jQuery, React)
+│   │   ├── jquery.min.js
+│   │   └── ...
+│   └── utils/          (Funções utilitárias)
+│       ├── api.js
+│       └── functions.js
+├── media/
+│   ├── images/
+│   │   ├── logos/
+│   │   │   ├── logo.png
+│   │   │   └── ...
+│   │   ├── icons/
+│   │   │   ├── search.svg
+│   │   │   └── ...
+│   │   ├── backgrounds/
+│   │   │   └── ...
+│   │   └── outros/
+│   ├── videos/
+│   │   └── ...
+│   ├── audios/
+│   │   └── ...
+│   └── fonts/
+│       └── ...
+├── index.html          (Página HTML principal)
+└── outros-arquivos.html (Outras páginas HTML, se houver)
+```

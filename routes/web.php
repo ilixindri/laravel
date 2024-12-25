@@ -16,22 +16,9 @@ use App\Models\User;
 |
 */
 
-Route::get('/', function () { return view('welcome'); });
+Route::get('/', [Controller::class, 'welcome'])->name('welcome');
 Route::get('/tests', function () { return view('tests'); });
-
-Route::get('/DashBoard', function () {
-    $user = User::find('1');
-    Auth::login($user);
-    return view('DashBoard');
-})->name('DashBoard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-Route::get('/LoadING/{Route}/', [Controller::class, 'LoadING'])->name('LoadING');
+Route::get('/dashboard', [Controller::class, 'dashboard'])->name('dashboard');
 
 Route::resources([
     'SystemS' => SystemController::class,
@@ -47,5 +34,12 @@ Route::post('Fields/{Field}/ReStore', [FieldController::class, 'ReStore'])->name
 Route::delete('Fields/{Field}/Force-Delete', [FieldController::class, 'ForceDelete'])->name('Fields.ForceDelete');
 Route::post('Lines/{Line}/ReStore', [LineController::class, 'ReStore'])->name('Lines.ReStore');
 Route::delete('Lines/{Line}/Force-Delete', [LineController::class, 'ForceDelete'])->name('Lines.ForceDelete');
+
+Route::group(['prefix' => 'profile'], function () {
+    Route::post('/', [ProfileController::class, 'create'])->name('profile.create');
+    Route::get('/', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/', [ProfileController::class, 'patch'])->name('profile.patch');
+    Route::delete('/', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
 require __DIR__.'/auth.php';
