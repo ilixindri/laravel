@@ -1,0 +1,20 @@
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 100% da altura da viewport para ocupar a tela inteira */
+}
+
+.loading {
+    border: 2vw solid #f3f3f3;
+    border-top: 2vw solid #3498db;
+    border-radius: 50%;
+    width: 10vw; /* 10% da largura da viewport para tornar responsivo */
+    height: 10vw; /* 10% da altura da viewport para tornar responsivo */
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

@@ -12,20 +12,18 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
-    Route::get('/signin/mail', [AuthenticatedSessionController::class, 'mail']);
-    Route::get('/transfer/mail', [AuthenticatedSessionController::class, 'mailTransfer']);
+    Route::get('/login', [AuthenticatedSessionController::class, 'mail'])->name('login');//x1
+    Route::get('/Mail', [AuthenticatedSessionController::class, 'mailTransfer'])->name('GetMail');
+    Route::post('/Mail', [AuthenticatedSessionController::class, 'mailTransfer'])->name('PostMail');
 
-    Route::get('/signin/pass/auth', [AuthenticatedSessionController::class, 'pass']);
+    Route::get('/login/pass/auth', [AuthenticatedSessionController::class, 'pass']);
 	Route::POST('/transfer/pass/auth', [AuthenticatedSessionController::class, 'passTransfer']);
-    
-	Route::get('/signin/pass/register', [RegisteredUserController::class, 'pass']);
+
+	Route::get('/login/pass/register', [RegisteredUserController::class, 'pass']);
 	Route::POST('/transfer/pass/register', [RegisteredUserController::class, 'passTransfer']);
 
-    Route::get('/signin/new', [AuthenticatedSessionController::class, 'new']);
+    Route::get('/login/new', [AuthenticatedSessionController::class, 'new']);
 
-    Route::get('login', [AuthenticatedSessionController::class, 'create'])->name('login');
-
-	
 	Route::get('register', [RegisteredUserController::class, 'create'])
                 ->name('register');
 

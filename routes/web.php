@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [Controller::class, 'welcome'])->name('welcome');
 Route::get('/tests', function () { return view('tests'); });
 Route::get('/dashboard', [Controller::class, 'dashboard'])->name('dashboard');
+
+Route::resources([
+    'SystemS' => SystemController::class,
+    'TableS' => TableController::class,
+    'Fields' => FieldController::class,
+    'LineS' => LineController::class,
+]);
+Route::post('SystemS/{System}/ReStore', [SystemController::class, 'ReStore'])->name('SystemS.ReStore');
+Route::delete('Systems/{System}/Force-Delete', [SystemController::class, 'ForceDelete'])->name('SystemS.ForceDelete');
+Route::post('Tables/{Table}/ReStore', [TableController::class, 'ReStore'])->name('Tables.ReStore');
+Route::delete('TableS/{Table}/Force-Delete', [TableController::class, 'ForceDelete'])->name('Tables.ForceDelete');
+Route::post('Fields/{Field}/ReStore', [FieldController::class, 'ReStore'])->name('Fields.ReStore');
+Route::delete('Fields/{Field}/Force-Delete', [FieldController::class, 'ForceDelete'])->name('Fields.ForceDelete');
+Route::post('Lines/{Line}/ReStore', [LineController::class, 'ReStore'])->name('Lines.ReStore');
+Route::delete('Lines/{Line}/Force-Delete', [LineController::class, 'ForceDelete'])->name('Lines.ForceDelete');
 
 Route::group(['prefix' => 'profile'], function () {
     Route::post('/', [ProfileController::class, 'create'])->name('profile.create');

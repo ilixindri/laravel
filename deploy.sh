@@ -3,7 +3,9 @@ sudo apt-get install -y php-dom
 sudo apt-get install -y php-curl
 sudo apt-get install -y php-zip
 ./composer install
-sudo apt install -y apache2
+sudo apt-get install -y npm
+npm install
+sudo apt-get install -y apache2
 sudo rm /etc/apache2/sites-enabled/000-default.conf
 current_folder=$(basename "$PWD")
 conteudo="<VirtualHost *:80>
@@ -45,7 +47,7 @@ echo "$conteudo" > "/etc/apache2/sites-enabled/000-$current_folder.conf"
 sudo /etc/init.d/apache2 restart
 sudo /etc/init.d/apache2 status
 # cp .env.example > .env # fazer isso em production and delete by .gitignore
+touch database/database.sqlite
 php artisan key:generate
 echo "Edite .env"
-touch database/database.sqlite
 # sudo mv . /var/www/ # não é possível mover se esse script estiver dentro da pasta a ser movida
