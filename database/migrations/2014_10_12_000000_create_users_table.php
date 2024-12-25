@@ -22,6 +22,7 @@ return new class extends Migration
                 $table->timestamp('mail_verified_at')->nullable();
                 $table->string('pass')->nullable();
                 $table->rememberToken();
+                // timezone <-config/app.php[timezone]
                 $table->timestamps();
             });
         } else if ($appDebug == false) {

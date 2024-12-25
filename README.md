@@ -136,14 +136,20 @@ php compose serve --port=80
 
 # Codes
 ```bash
-php artisan make:model Agreement
-php artisan make:migration create_agreement_table
+php artisan make:model Sistema -a
 ```
 
 # Deploy
 ```bash
+composer install --no-dev --optimize-autoloader
+php artisan migrate:refresh --seed
+npm install
+php artisan key:generate
 php artisan clear-compiled && composer dump-autoload && php artisan optimize
-npm install && npm run dev
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+npm run build
 ```
 
 # Develop

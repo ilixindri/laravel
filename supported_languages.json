@@ -1,0 +1,972 @@
+[
+    {
+        "language_code": "ab",
+        "display_name": "Abkhaz",
+        "support_target": true
+    },
+    {
+        "language_code": "ace",
+        "display_name": "Acehnese",
+        "support_target": true
+    },
+    {
+        "language_code": "ach",
+        "display_name": "Acholi",
+        "support_target": true
+    },
+    {
+        "language_code": "af",
+        "display_name": "Afrikaans",
+        "support_target": true
+    },
+    {
+        "language_code": "sq",
+        "display_name": "Albanian",
+        "support_target": true
+    },
+    {
+        "language_code": "alz",
+        "display_name": "Alur",
+        "support_target": true
+    },
+    {
+        "language_code": "am",
+        "display_name": "Amharic",
+        "support_target": true
+    },
+    {
+        "language_code": "ar",
+        "display_name": "Arabic",
+        "support_target": true
+    },
+    {
+        "language_code": "hy",
+        "display_name": "Armenian",
+        "support_target": true
+    },
+    {
+        "language_code": "as",
+        "display_name": "Assamese",
+        "support_target": true
+    },
+    {
+        "language_code": "awa",
+        "display_name": "Awadhi",
+        "support_target": true
+    },
+    {
+        "language_code": "ay",
+        "display_name": "Aymara",
+        "support_target": true
+    },
+    {
+        "language_code": "az",
+        "display_name": "Azerbaijani",
+        "support_target": true
+    },
+    {
+        "language_code": "ban",
+        "display_name": "Balinese",
+        "support_target": true
+    },
+    {
+        "language_code": "bm",
+        "display_name": "Bambara",
+        "support_target": true
+    },
+    {
+        "language_code": "ba",
+        "display_name": "Bashkir",
+        "support_target": true
+    },
+    {
+        "language_code": "eu",
+        "display_name": "Basque",
+        "support_target": true
+    },
+    {
+        "language_code": "btx",
+        "display_name": "Batak Karo",
+        "support_target": true
+    },
+    {
+        "language_code": "bts",
+        "display_name": "Batak Simalungun",
+        "support_target": true
+    },
+    {
+        "language_code": "bbc",
+        "display_name": "Batak Toba",
+        "support_target": true
+    },
+    {
+        "language_code": "be",
+        "display_name": "Belarusian",
+        "support_target": true
+    },
+    {
+        "language_code": "bem",
+        "display_name": "Bemba",
+        "support_target": true
+    },
+    {
+        "language_code": "bn",
+        "display_name": "Bengali",
+        "support_target": true
+    },
+    {
+        "language_code": "bew",
+        "display_name": "Betawi",
+        "support_target": true
+    },
+    {
+        "language_code": "bho",
+        "display_name": "Bhojpuri",
+        "support_target": true
+    },
+    {
+        "language_code": "bik",
+        "display_name": "Bikol",
+        "support_target": true
+    },
+    {
+        "language_code": "bs",
+        "display_name": "Bosnian",
+        "support_target": true
+    },
+    {
+        "language_code": "br",
+        "display_name": "Breton",
+        "support_target": true
+    },
+    {
+        "language_code": "bg",
+        "display_name": "Bulgarian",
+        "support_target": true
+    },
+    {
+        "language_code": "bua",
+        "display_name": "Buryat",
+        "support_target": true
+    },
+    {
+        "language_code": "yue",
+        "display_name": "Cantonese",
+        "support_target": true
+    },
+    {
+        "language_code": "ca",
+        "display_name": "Catalan",
+        "support_target": true
+    },
+    {
+        "language_code": "ceb",
+        "display_name": "Cebuano",
+        "support_target": true
+    },
+    {
+        "language_code": "ny",
+        "display_name": "Chichewa",
+        "support_target": true
+    },
+    {
+        "language_code": "zh",
+        "display_name": "Chinese (Simplified)",
+        "support_target": true
+    },
+    {
+        "language_code": "zh-CN",
+        "display_name": "Chinese (Simplified)",
+        "support_target": true
+    },
+    {
+        "language_code": "zh-TW",
+        "display_name": "Chinese (Traditional)",
+        "support_target": true
+    },
+    {
+        "language_code": "cv",
+        "display_name": "Chuvash",
+        "support_target": true
+    },
+    {
+        "language_code": "co",
+        "display_name": "Corsican",
+        "support_target": true
+    },
+    {
+        "language_code": "crh",
+        "display_name": "Crimean Tatar",
+        "support_target": true
+    },
+    {
+        "language_code": "hr",
+        "display_name": "Croatian",
+        "support_target": true
+    },
+    {
+        "language_code": "cs",
+        "display_name": "Czech",
+        "support_target": true
+    },
+    {
+        "language_code": "da",
+        "display_name": "Danish",
+        "support_target": true
+    },
+    {
+        "language_code": "dv",
+        "display_name": "Dhivehi",
+        "support_target": true
+    },
+    {
+        "language_code": "din",
+        "display_name": "Dinka",
+        "support_target": true
+    },
+    {
+        "language_code": "doi",
+        "display_name": "Dogri",
+        "support_target": true
+    },
+    {
+        "language_code": "dov",
+        "display_name": "Dombe",
+        "support_target": true
+    },
+    {
+        "language_code": "nl",
+        "display_name": "Dutch",
+        "support_target": true
+    },
+    {
+        "language_code": "dz",
+        "display_name": "Dzongkha",
+        "support_target": true
+    },
+    {
+        "language_code": "en",
+        "display_name": "English",
+        "support_target": true
+    },
+    {
+        "language_code": "eo",
+        "display_name": "Esperanto",
+        "support_target": true
+    },
+    {
+        "language_code": "et",
+        "display_name": "Estonian",
+        "support_target": true
+    },
+    {
+        "language_code": "ee",
+        "display_name": "Ewe",
+        "support_target": true
+    },
+    {
+        "language_code": "fj",
+        "display_name": "Fijian",
+        "support_target": true
+    },
+    {
+        "language_code": "tl",
+        "display_name": "Filipino",
+        "support_target": true
+    },
+    {
+        "language_code": "fil",
+        "display_name": "Filipino",
+        "support_target": true
+    },
+    {
+        "language_code": "fi",
+        "display_name": "Finnish",
+        "support_target": true
+    },
+    {
+        "language_code": "fr",
+        "display_name": "French",
+        "support_target": true
+    },
+    {
+        "language_code": "fy",
+        "display_name": "Frisian",
+        "support_target": true
+    },
+    {
+        "language_code": "ff",
+        "display_name": "Fulani",
+        "support_target": true
+    },
+    {
+        "language_code": "gaa",
+        "display_name": "Ga",
+        "support_target": true
+    },
+    {
+        "language_code": "gl",
+        "display_name": "Galician",
+        "support_target": true
+    },
+    {
+        "language_code": "ka",
+        "display_name": "Georgian",
+        "support_target": true
+    },
+    {
+        "language_code": "de",
+        "display_name": "German",
+        "support_target": true
+    },
+    {
+        "language_code": "el",
+        "display_name": "Greek",
+        "support_target": true
+    },
+    {
+        "language_code": "gn",
+        "display_name": "Guarani",
+        "support_target": true
+    },
+    {
+        "language_code": "gu",
+        "display_name": "Gujarati",
+        "support_target": true
+    },
+    {
+        "language_code": "ht",
+        "display_name": "Haitian Creole",
+        "support_target": true
+    },
+    {
+        "language_code": "cnh",
+        "display_name": "Hakha Chin",
+        "support_target": true
+    },
+    {
+        "language_code": "ha",
+        "display_name": "Hausa",
+        "support_target": true
+    },
+    {
+        "language_code": "haw",
+        "display_name": "Hawaiian",
+        "support_target": true
+    },
+    {
+        "language_code": "iw",
+        "display_name": "Hebrew",
+        "support_target": true
+    },
+    {
+        "language_code": "he",
+        "display_name": "Hebrew",
+        "support_target": true
+    },
+    {
+        "language_code": "hil",
+        "display_name": "Hiligaynon",
+        "support_target": true
+    },
+    {
+        "language_code": "hi",
+        "display_name": "Hindi",
+        "support_target": true
+    },
+    {
+        "language_code": "hmn",
+        "display_name": "Hmong",
+        "support_target": true
+    },
+    {
+        "language_code": "hu",
+        "display_name": "Hungarian",
+        "support_target": true
+    },
+    {
+        "language_code": "hrx",
+        "display_name": "Hunsrik",
+        "support_target": true
+    },
+    {
+        "language_code": "is",
+        "display_name": "Icelandic",
+        "support_target": true
+    },
+    {
+        "language_code": "ig",
+        "display_name": "Igbo",
+        "support_target": true
+    },
+    {
+        "language_code": "ilo",
+        "display_name": "Ilocano",
+        "support_target": true
+    },
+    {
+        "language_code": "id",
+        "display_name": "Indonesian",
+        "support_target": true
+    },
+    {
+        "language_code": "ga",
+        "display_name": "Irish",
+        "support_target": true
+    },
+    {
+        "language_code": "it",
+        "display_name": "Italian",
+        "support_target": true
+    },
+    {
+        "language_code": "ja",
+        "display_name": "Japanese",
+        "support_target": true
+    },
+    {
+        "language_code": "jw",
+        "display_name": "Javanese",
+        "support_target": true
+    },
+    {
+        "language_code": "jv",
+        "display_name": "Javanese",
+        "support_target": true
+    },
+    {
+        "language_code": "kn",
+        "display_name": "Kannada",
+        "support_target": true
+    },
+    {
+        "language_code": "pam",
+        "display_name": "Kapampangan",
+        "support_target": true
+    },
+    {
+        "language_code": "kk",
+        "display_name": "Kazakh",
+        "support_target": true
+    },
+    {
+        "language_code": "km",
+        "display_name": "Khmer",
+        "support_target": true
+    },
+    {
+        "language_code": "cgg",
+        "display_name": "Kiga",
+        "support_target": true
+    },
+    {
+        "language_code": "rw",
+        "display_name": "Kinyarwanda",
+        "support_target": true
+    },
+    {
+        "language_code": "ktu",
+        "display_name": "Kituba",
+        "support_target": true
+    },
+    {
+        "language_code": "gom",
+        "display_name": "Konkani",
+        "support_target": true
+    },
+    {
+        "language_code": "ko",
+        "display_name": "Korean",
+        "support_target": true
+    },
+    {
+        "language_code": "kri",
+        "display_name": "Krio",
+        "support_target": true
+    },
+    {
+        "language_code": "ku",
+        "display_name": "Kurdish (Kurmanji)",
+        "support_target": true
+    },
+    {
+        "language_code": "ckb",
+        "display_name": "Kurdish (Sorani)",
+        "support_target": true
+    },
+    {
+        "language_code": "ky",
+        "display_name": "Kyrgyz",
+        "support_target": true
+    },
+    {
+        "language_code": "lo",
+        "display_name": "Lao",
+        "support_target": true
+    },
+    {
+        "language_code": "ltg",
+        "display_name": "Latgalian",
+        "support_target": true
+    },
+    {
+        "language_code": "la",
+        "display_name": "Latin",
+        "support_target": true
+    },
+    {
+        "language_code": "lv",
+        "display_name": "Latvian",
+        "support_target": true
+    },
+    {
+        "language_code": "lij",
+        "display_name": "Ligurian",
+        "support_target": true
+    },
+    {
+        "language_code": "li",
+        "display_name": "Limburgish",
+        "support_target": true
+    },
+    {
+        "language_code": "ln",
+        "display_name": "Lingala",
+        "support_target": true
+    },
+    {
+        "language_code": "lt",
+        "display_name": "Lithuanian",
+        "support_target": true
+    },
+    {
+        "language_code": "lmo",
+        "display_name": "Lombard",
+        "support_target": true
+    },
+    {
+        "language_code": "lg",
+        "display_name": "Luganda",
+        "support_target": true
+    },
+    {
+        "language_code": "luo",
+        "display_name": "Luo",
+        "support_target": true
+    },
+    {
+        "language_code": "lb",
+        "display_name": "Luxembourgish",
+        "support_target": true
+    },
+    {
+        "language_code": "mk",
+        "display_name": "Macedonian",
+        "support_target": true
+    },
+    {
+        "language_code": "mai",
+        "display_name": "Maithili",
+        "support_target": true
+    },
+    {
+        "language_code": "mak",
+        "display_name": "Makassar",
+        "support_target": true
+    },
+    {
+        "language_code": "mg",
+        "display_name": "Malagasy",
+        "support_target": true
+    },
+    {
+        "language_code": "ms",
+        "display_name": "Malay",
+        "support_target": true
+    },
+    {
+        "language_code": "ms-Arab",
+        "display_name": "Malay (Jawi)",
+        "support_target": true
+    },
+    {
+        "language_code": "ml",
+        "display_name": "Malayalam",
+        "support_target": true
+    },
+    {
+        "language_code": "mt",
+        "display_name": "Maltese",
+        "support_target": true
+    },
+    {
+        "language_code": "mi",
+        "display_name": "Maori",
+        "support_target": true
+    },
+    {
+        "language_code": "mr",
+        "display_name": "Marathi",
+        "support_target": true
+    },
+    {
+        "language_code": "chm",
+        "display_name": "Meadow Mari",
+        "support_target": true
+    },
+    {
+        "language_code": "mni-Mtei",
+        "display_name": "Meiteilon (Manipuri)",
+        "support_target": true
+    },
+    {
+        "language_code": "min",
+        "display_name": "Minang",
+        "support_target": true
+    },
+    {
+        "language_code": "lus",
+        "display_name": "Mizo",
+        "support_target": true
+    },
+    {
+        "language_code": "mn",
+        "display_name": "Mongolian",
+        "support_target": true
+    },
+    {
+        "language_code": "my",
+        "display_name": "Myanmar (Burmese)",
+        "support_target": true
+    },
+    {
+        "language_code": "nr",
+        "display_name": "Ndebele (South)",
+        "support_target": true
+    },
+    {
+        "language_code": "new",
+        "display_name": "Nepalbhasa (Newari)",
+        "support_target": true
+    },
+    {
+        "language_code": "ne",
+        "display_name": "Nepali",
+        "support_target": true
+    },
+    {
+        "language_code": "no",
+        "display_name": "Norwegian",
+        "support_target": true
+    },
+    {
+        "language_code": "nus",
+        "display_name": "Nuer",
+        "support_target": true
+    },
+    {
+        "language_code": "oc",
+        "display_name": "Occitan",
+        "support_target": true
+    },
+    {
+        "language_code": "or",
+        "display_name": "Odia (Oriya)",
+        "support_target": true
+    },
+    {
+        "language_code": "om",
+        "display_name": "Oromo",
+        "support_target": true
+    },
+    {
+        "language_code": "pag",
+        "display_name": "Pangasinan",
+        "support_target": true
+    },
+    {
+        "language_code": "pap",
+        "display_name": "Papiamento",
+        "support_target": true
+    },
+    {
+        "language_code": "ps",
+        "display_name": "Pashto",
+        "support_target": true
+    },
+    {
+        "language_code": "fa",
+        "display_name": "Persian",
+        "support_target": true
+    },
+    {
+        "language_code": "pl",
+        "display_name": "Polish",
+        "support_target": true
+    },
+    {
+        "language_code": "pt",
+        "display_name": "Portuguese (Brazil)",
+        "support_target": true
+    },
+    {
+        "language_code": "pa",
+        "display_name": "Punjabi (Gurmukhi)",
+        "support_target": true
+    },
+    {
+        "language_code": "pa-Arab",
+        "display_name": "Punjabi (Shahmukhi)",
+        "support_target": true
+    },
+    {
+        "language_code": "qu",
+        "display_name": "Quechua",
+        "support_target": true
+    },
+    {
+        "language_code": "rom",
+        "display_name": "Romani",
+        "support_target": true
+    },
+    {
+        "language_code": "ro",
+        "display_name": "Romanian",
+        "support_target": true
+    },
+    {
+        "language_code": "rn",
+        "display_name": "Rundi",
+        "support_target": true
+    },
+    {
+        "language_code": "ru",
+        "display_name": "Russian",
+        "support_target": true
+    },
+    {
+        "language_code": "sm",
+        "display_name": "Samoan",
+        "support_target": true
+    },
+    {
+        "language_code": "sg",
+        "display_name": "Sango",
+        "support_target": true
+    },
+    {
+        "language_code": "sa",
+        "display_name": "Sanskrit",
+        "support_target": true
+    },
+    {
+        "language_code": "gd",
+        "display_name": "Scots Gaelic",
+        "support_target": true
+    },
+    {
+        "language_code": "nso",
+        "display_name": "Sepedi",
+        "support_target": true
+    },
+    {
+        "language_code": "sr",
+        "display_name": "Serbian",
+        "support_target": true
+    },
+    {
+        "language_code": "st",
+        "display_name": "Sesotho",
+        "support_target": true
+    },
+    {
+        "language_code": "crs",
+        "display_name": "Seychellois Creole",
+        "support_target": true
+    },
+    {
+        "language_code": "shn",
+        "display_name": "Shan",
+        "support_target": true
+    },
+    {
+        "language_code": "sn",
+        "display_name": "Shona",
+        "support_target": true
+    },
+    {
+        "language_code": "scn",
+        "display_name": "Sicilian",
+        "support_target": true
+    },
+    {
+        "language_code": "szl",
+        "display_name": "Silesian",
+        "support_target": true
+    },
+    {
+        "language_code": "sd",
+        "display_name": "Sindhi",
+        "support_target": true
+    },
+    {
+        "language_code": "si",
+        "display_name": "Sinhala",
+        "support_target": true
+    },
+    {
+        "language_code": "sk",
+        "display_name": "Slovak",
+        "support_target": true
+    },
+    {
+        "language_code": "sl",
+        "display_name": "Slovenian",
+        "support_target": true
+    },
+    {
+        "language_code": "so",
+        "display_name": "Somali",
+        "support_target": true
+    },
+    {
+        "language_code": "es",
+        "display_name": "Spanish",
+        "support_target": true
+    },
+    {
+        "language_code": "su",
+        "display_name": "Sundanese",
+        "support_target": true
+    },
+    {
+        "language_code": "sw",
+        "display_name": "Swahili",
+        "support_target": true
+    },
+    {
+        "language_code": "ss",
+        "display_name": "Swati",
+        "support_target": true
+    },
+    {
+        "language_code": "sv",
+        "display_name": "Swedish",
+        "support_target": true
+    },
+    {
+        "language_code": "tg",
+        "display_name": "Tajik",
+        "support_target": true
+    },
+    {
+        "language_code": "ta",
+        "display_name": "Tamil",
+        "support_target": true
+    },
+    {
+        "language_code": "tt",
+        "display_name": "Tatar",
+        "support_target": true
+    },
+    {
+        "language_code": "te",
+        "display_name": "Telugu",
+        "support_target": true
+    },
+    {
+        "language_code": "tet",
+        "display_name": "Tetum",
+        "support_target": true
+    },
+    {
+        "language_code": "th",
+        "display_name": "Thai",
+        "support_target": true
+    },
+    {
+        "language_code": "ti",
+        "display_name": "Tigrinya",
+        "support_target": true
+    },
+    {
+        "language_code": "ts",
+        "display_name": "Tsonga",
+        "support_target": true
+    },
+    {
+        "language_code": "tn",
+        "display_name": "Tswana",
+        "support_target": true
+    },
+    {
+        "language_code": "tr",
+        "display_name": "Turkish",
+        "support_target": true
+    },
+    {
+        "language_code": "tk",
+        "display_name": "Turkmen",
+        "support_target": true
+    },
+    {
+        "language_code": "ak",
+        "display_name": "Twi",
+        "support_target": true
+    },
+    {
+        "language_code": "uk",
+        "display_name": "Ukrainian",
+        "support_target": true
+    },
+    {
+        "language_code": "ur",
+        "display_name": "Urdu",
+        "support_target": true
+    },
+    {
+        "language_code": "ug",
+        "display_name": "Uyghur",
+        "support_target": true
+    },
+    {
+        "language_code": "uz",
+        "display_name": "Uzbek",
+        "support_target": true
+    },
+    {
+        "language_code": "vi",
+        "display_name": "Vietnamese",
+        "support_target": true
+    },
+    {
+        "language_code": "cy",
+        "display_name": "Welsh",
+        "support_target": true
+    },
+    {
+        "language_code": "xh",
+        "display_name": "Xhosa",
+        "support_target": true
+    },
+    {
+        "language_code": "yi",
+        "display_name": "Yiddish",
+        "support_target": true
+    },
+    {
+        "language_code": "yo",
+        "display_name": "Yoruba",
+        "support_target": true
+    },
+    {
+        "language_code": "yua",
+        "display_name": "Yucatec Maya",
+        "support_target": true
+    },
+    {
+        "language_code": "zu",
+        "display_name": "Zulu",
+        "support_target": true
+    }
+]
