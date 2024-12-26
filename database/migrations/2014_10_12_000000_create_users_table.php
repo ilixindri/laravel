@@ -21,10 +21,14 @@ return new class extends Migration
                 $table->string('mail')->nullable()->unique();
                 $table->timestamp('mail_verified_at')->nullable();
                 $table->string('pass')->nullable();
+                $table->ipAddress('ipv4')->nullable();
+                $table->ipAddress('ipv6')->nullable();
+                $table->string('timezone')->nullable();
                 $table->rememberToken();
                 // timezone <-config/app.php[timezone]
                 $table->timestamps();
-            });
+                $table->softDeletes();
+            });     
         } else if ($appDebug == false) {
             Schema::create('users', function (Blueprint $table) {
                 $table->id();
@@ -32,8 +36,12 @@ return new class extends Migration
                 $table->string('mail')->unique();
                 $table->timestamp('mail_verified_at')->nullable();
                 $table->string('pass');
+                $table->ipAddress('ipv4')->nullable();
+                $table->ipAddress('ipv6')->nullable();
+                $table->string('timezone')->default(config('app.timezone'));
                 $table->rememberToken();
                 $table->timestamps();
+                $table->softDeletes();
             });
         }
     }

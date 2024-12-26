@@ -12,11 +12,7 @@
 
         <script src="/js/modules{{ str_replace(url('/'), '', url()->current()) }}.js" defer></script>
 
-        @if (isset($components))
-            @foreach ($components as $component)
-                <link rel="stylesheet" href="/css/components/{{ $component }}.css">
-            @endforeach
-        @endif
+        <link rel="stylesheet" href="/css/components{{ str_replace(url('/'), '', url()->current()) }}.css">
 
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />

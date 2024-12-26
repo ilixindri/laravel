@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Esperar a Execução dos Scripts</title>
+</head>
+<body>
+
+<script>
+// Função para simular um script que leva tempo para executar
+function scriptDemorado(tempo) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log(`Script demorou ${tempo} ms para executar.`);
+            resolve();
+        }, tempo);
+    });
+}
+
+// Função assíncrona para executar todos os scripts
+async function executarScripts() {
+    console.log("Executando scripts...");
+
+    // Simula a execução de múltiplos scripts
+    await scriptDemorado(1000);
+    await scriptDemorado(2000);
+    await scriptDemorado(1500);
+
+    console.log("Todos os scripts foram executados. Encerrando...");
+}
+
+// Chama a função para executar os scripts
+executarScripts();
+</script>
+
+</body>
+</html>

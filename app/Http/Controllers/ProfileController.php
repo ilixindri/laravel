@@ -29,16 +29,22 @@ class ProfileController extends Controller
     public function edit(Request $request): View
     {
         $user = User::find($request->_id);
+        Auth::login($user);
+        if (Auth::check()) {
+            // dd($user);
+        }
         return view('profile.edit', [
-            'user' => $user
+            'user' => $user, 'modules' => ['profile'], 'components' => ['profile']
         ]);
     }
 
     /**
      * Update the user's profile information.
      */
-    public function patch(ProfileUpdateRequest $request): RedirectResponse
+    public function put(ProfileUpdateRequest $request): RedirectResponse
     {
+        $user = User::find($request->_id);
+        dd($request->user());
         $request->user()->fill($request->validated());
 
         if ($request->user()->isDirty('email')) {

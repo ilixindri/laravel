@@ -19,7 +19,7 @@ return new class extends Migration
             $Table->timestamps();
             $Table->softDeletes();
 
-            $table->foreign('System_Id')->references('id')->on('SytemS')->onDelete('cascade');
+            $Table->foreign('System_Id')->references('id')->on('SytemS')->onDelete('cascade');
         });
     }
 

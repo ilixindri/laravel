@@ -13,9 +13,9 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.patch') }}" class="mt-6 space-y-6" autocomplete="off">
+    <form method="post" action="{{ route('profile.put') }}" class="mt-6 space-y-6" autocomplete="off">
         @csrf
-        @method('patch')
+        @method('put')
 
         <div>
             <x-input-label for="name" :value="__('Name')" />

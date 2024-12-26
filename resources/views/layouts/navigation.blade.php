@@ -32,10 +32,10 @@
                         </x-slot>
 
                         <x-slot name="content">
-                            <x-dropdown-link id="profile_edit" :href="route('profile.edit')">
+                            <x-dropdown-link id="" :href="route('profile.edit')">
                                 {{ __('Create') }}
                             </x-dropdown-link>
-                            <x-dropdown-link id="profile_edit" :href="route('profile.edit')">
+                            <x-dropdown-link id="" :href="route('profile.edit')">
                                 {{ __('List') }}
                             </x-dropdown-link>
                         </x-slot>
@@ -49,7 +49,7 @@
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
                             @auth
-                                <div>{{ Auth::user()->name }}a</div>
+                                <div>{{ Auth::user()->name }}</div>
                             @else
                                 <div>Convidado</div>
                             @endauth
@@ -60,7 +60,6 @@
                                 </svg>
                             </div>
                         </button>
-                        @endauth
                     </x-slot>
                     <x-slot name="content">
                         <x-dropdown-link id="profile_edit" :href="route('profile.edit')">
@@ -77,7 +76,6 @@
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
                         </form>
-                        @endauth
                     </x-slot>
                 </x-dropdown>
             </div>
@@ -102,7 +100,7 @@
             </x-responsive-nav-link>
         </div>
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link :href="route('DashBoard')" :active="request()->routeIs('DashBoard')">
                 {{ __('Systems') }}
             </x-responsive-nav-link>
         </div>

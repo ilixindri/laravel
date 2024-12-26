@@ -18,6 +18,6 @@ class Controller extends BaseController
 
 	public function welcome(Request $request): View
     {
-        return view('welcome', ['title' => 'QWE', 'modules' => ['welcome'], 'components' => ['welcome']]);
+        return view('welcome', ['title' => '', 'modules' => ['welcome'], 'components' => ['welcome']]);
     }
 }

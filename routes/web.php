@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SystemController;
+use App\Http\Controllers\TableController;
+use App\Http\Controllers\FieldController;
+use App\Http\Controllers\LineController;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
@@ -18,7 +22,7 @@ use App\Models\User;
 
 Route::get('/', [Controller::class, 'welcome'])->name('welcome');
 Route::get('/tests', function () { return view('tests'); });
-Route::get('/dashboard', [Controller::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard', [Controller::class, 'dashboard'])->name('DashBoard');
 
 Route::resources([
     'SystemS' => SystemController::class,
@@ -38,7 +42,7 @@ Route::delete('Lines/{Line}/Force-Delete', [LineController::class, 'ForceDelete'
 Route::group(['prefix' => 'profile'], function () {
     Route::post('/', [ProfileController::class, 'create'])->name('profile.create');
     Route::get('/', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/', [ProfileController::class, 'patch'])->name('profile.patch');
+    Route::put('/', [ProfileController::class, 'put'])->name('profile.put');
     Route::delete('/', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
